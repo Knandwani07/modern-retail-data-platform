@@ -1,81 +1,91 @@
-# ❄️ Snowflake SQL Scripts
+# ❄️ Snowflake SQL
 
-This folder contains the SQL scripts used to build, configure, and analyze data within Snowflake for the Retail Analytics Platform.
+This directory contains the Snowflake SQL scripts used to build, configure, and operate the Snowflake environment for the Modern Retail Data Platform.
 
-The scripts cover the complete Snowflake workflow, including environment setup, Amazon S3 integration, data loading, JSON transformation, validation, and analytics.
+The scripts cover database provisioning, storage integration with Amazon S3, data loading, and data transformation activities required to prepare retail datasets for analytics and reporting.
 
 ---
 
-## 📂 Folder Structure
+## 📂 Directory Structure
 
-```text
-snowflake-sql/
-├── database-setup/
-├── storage-integration/
-├── data-loading/
-├── transformations/
-├── analytics/
-└── README.md
-```
+| Folder | Purpose |
+|----------|---------|
+| `database-setup/` | Creates the foundational Snowflake resources including the database, schema, and virtual warehouse. |
+| `storage-integration/` | Configures secure connectivity between Snowflake and Amazon S3 using storage integrations, file formats, and external stages. |
+| `data-loading/` | Creates tables, stages, and file formats required to load raw and curated retail datasets into Snowflake. |
+| `transformations/` | Contains SQL transformations used to prepare and normalize data for downstream analytics and reporting. |
 
-### database-setup/
+---
 
-Contains scripts for creating:
+## 🎯 Objectives
+
+The SQL scripts in this directory are used to:
+
+- Provision Snowflake infrastructure.
+- Establish secure access to Amazon S3.
+- Load raw and curated retail datasets.
+- Process semi-structured JSON data.
+- Transform datasets into analytics-ready formats.
+- Support reporting and business intelligence workflows.
+
+---
+
+## 🔄 Implementation Flow
+
+The folders should be executed in the following order:
+
+### 1. Database Setup
+
+Create the foundational Snowflake resources:
+
+- Database
+- Schema
+- Virtual Warehouse
+
+### 2. Storage Integration
+
+Configure Snowflake access to Amazon S3:
+
+- Storage Integration
+- File Formats
+- External Stages
+- Access Validation
+
+### 3. Data Loading
+
+Load retail datasets into Snowflake:
+
+- Product JSON Data
+- Curated Order Data
+- Validation Queries
+
+### 4. Transformations
+
+Apply data transformations:
+
+- Flatten Product Tags
+- Prepare analytics-ready datasets
+
+---
+
+## 🔧 Snowflake Features Used
 
 - Databases
 - Schemas
-- Warehouses
-
-### storage-integration/
-
-Contains scripts for:
-
+- Virtual Warehouses
 - Storage Integrations
 - External Stages
 - File Formats
-- Amazon S3 connectivity
-
-### data-loading/
-
-Contains scripts used to:
-
-- Load curated Parquet data
-- Load JSON datasets
-- Populate Snowflake tables
-
-### transformations/
-
-Contains SQL transformations for:
-
-- Parsing semi-structured JSON data
-- Flattening nested arrays
-- Creating analytics-ready datasets
-
-### analytics/
-
-Contains business intelligence and reporting queries used to generate insights from the retail dataset.
+- Tables
+- VARIANT Data Type
+- COPY INTO Commands
+- FLATTEN Function
 
 ---
 
-## 🎯 Purpose
+## 📌 Notes
 
-These scripts demonstrate how Snowflake can be integrated with an AWS-based data lake to create a modern analytics platform.
-
-The queries support:
-
-- Data ingestion
-- Data transformation
-- Data validation
-- Data warehousing
-- Business analytics
-
----
-
-## 🔧 Technologies Used
-
-- Snowflake
-- Amazon S3
-- SQL
-- Semi-Structured Data (JSON)
-- Parquet Files
-- Snowflake Storage Integrations
+- Execute the folders sequentially to avoid dependency issues.
+- Ensure AWS IAM roles and Snowflake storage integrations are configured before loading data.
+- Replace placeholder values such as bucket names, IAM role ARNs, and account-specific identifiers before execution.
+- Validate data ingestion before running transformations and analytics queries.
