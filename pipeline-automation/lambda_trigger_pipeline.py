@@ -1,15 +1,11 @@
 import json
 import logging
-
 import boto3
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
-
 GLUE_JOB_NAME = "retail-transform-orders"
-
 glue_client = boto3.client("glue")
-
 
 def lambda_handler(event, context):
     logger.info("Received event: %s", json.dumps(event))
