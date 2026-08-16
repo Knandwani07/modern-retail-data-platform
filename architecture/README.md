@@ -10,7 +10,6 @@ The architecture combines automated data processing on AWS with manual batch ana
 
 | File | Description |
 |--------|-------------|
-| `architecture-diagram.png` | High-level architecture diagram showing AWS and Snowflake components and data flow. |
 | `architecture-overview.md` | End-to-end explanation of how data moves through the platform. |
 | `architecture-components.md` | Detailed description of each AWS and Snowflake component used in the solution. |
 
