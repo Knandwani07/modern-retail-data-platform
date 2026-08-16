@@ -1,0 +1,38 @@
+{
+  "Records": [
+    {
+      "eventVersion": "2.1",
+      "eventSource": "aws:s3",
+      "awsRegion": "us-east-1",
+      "eventTime": "2026-08-15T12:00:00.000Z",
+      "eventName": "ObjectCreated:Put",
+      "userIdentity": {
+        "principalId": "AWS:TESTPRINCIPAL"
+      },
+      "requestParameters": {
+        "sourceIPAddress": "127.0.0.1"
+      },
+      "responseElements": {
+        "x-amz-request-id": "TESTREQUESTID",
+        "x-amz-id-2": "TESTID2"
+      },
+      "s3": {
+        "s3SchemaVersion": "1.0",
+        "configurationId": "retail-pipeline-trigger",
+        "bucket": {
+          "name": "retail-pipeline-yourname-2026",
+          "ownerIdentity": {
+            "principalId": "TESTOWNER"
+          },
+          "arn": "arn:aws:s3:::retail-pipeline-yourname-2026"
+        },
+        "object": {
+          "key": "raw/orders/dt=2026-08-15/test_orders.parquet",
+          "size": 1024,
+          "eTag": "0123456789abcdef0123456789abcdef",
+          "sequencer": "0A1B2C3D4E5F678901"
+        }
+      }
+    }
+  ]
+}
